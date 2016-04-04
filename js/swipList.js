@@ -5,7 +5,7 @@ var moveXWidth=0;//左滑的距离
 $(function() {
     //alert("Hello");
     setHeight_Width();
-
+		//zxm备注
     // 获取所有行，对每一行设置监听
     var lines = $(".list_context");
     var len = lines.length;
