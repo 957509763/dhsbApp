@@ -1,0 +1,20 @@
+.text-title{
+    font-size: 25px;
+}
+div.line{
+    position: relative;
+    height:1px;border-top:solid rgb(0,0,0) 1px;
+    width: 90%;
+    left: 5%;
+}
+.text-notice{
+    width: 93%;
+    padding-left: 3%;
+    padding-right: 10%
+}
+.text-notice-context{
+    padding-top: 10%;
+}
+.text-time{
+    font-size: 10px;
+}

@@ -1,0 +1,21 @@
+form {
+    width: 96%;
+}
+table {
+    padding-left: 3%;
+    padding-top: 5%;
+}
+.text-time{
+    position: relative;
+    left: -10px;
+}
+
+
+.ui-notice-content{
+    position: relative;
+    top: -18px;
+}
+.text-starttime{
+    position: relative;
+    top: 10px;
+}

@@ -1,0 +1,43 @@
+﻿body{
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-size: 100%;
+    background: #ededed;
+    font-family: Microsoft YaHei;
+
+}
+
+.grade-eject>ul{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    height: 90%;
+    width: 100%;
+    -webkit-overflow-scrolling : touch;
+
+}
+
+.grade-eject>ul>li{
+    line-height: 3rem;
+    font-size: 1.12rem;
+    padding-left: 1rem;
+    border-bottom: solid 1px #eee;
+}
+
+.grade-eject>ul.grade-w{
+    background: #ddd;
+    position: absolute;
+    z-index: 5;
+}
+
+.grade-eject>ul.grade-t{
+    background: #eee;
+    position: absolute;
+    z-index: 5;
+    left: 33.48%;
+}
+.grade-eject>ul.grade-t>li{
+    border-bottom: solid 1px #fff;
+}
+

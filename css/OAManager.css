@@ -1,0 +1,68 @@
+
+.brick.small {
+    width: 70px;
+    height: 85px;
+}
+.index_icon{
+    position: absolute;
+    height:50px;
+    align-content: center;
+}
+.index_icon img{
+    position: absolute;
+    float: left;
+    width:50px;
+    height:50px;
+}
+.index_icno_title{
+    width:50px;
+    margin-top:50px;
+    text-align: center;
+}
+.removeself_message{
+    width: 25px;
+    height:25px;
+    position: absolute;
+    float:left;
+    margin-left: -10px;
+    margin-top:-8px;
+    display: none;
+}
+.removeself_message img{
+    width: 25px;
+    height:25px;
+}
+.circle_message {
+    width: 25px;
+    height: 25px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin-top:-8px;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    margin-left: 40px;
+    float:right;
+    padding-top:4px;
+}
+.layoutTopbar{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background-color:#c4e3f3;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    opacity:0.5;
+    display: none;
+}
+.layoutTopbar a{
+    float:right;
+    color:#FFFFFF;
+    text-decoration: none;
+    height: 30px;
+}
+.layoutTopbar a:hover{
+    text-decoration: none;
+}

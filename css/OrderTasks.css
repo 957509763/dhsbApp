@@ -1,0 +1,32 @@
+       form {
+            width: 96%;
+        }
+        table {
+            padding-left: 3%;
+            padding-top: 5%;
+        }
+        .orderTasks-submit{
+            padding-top: 2%;
+            padding-left: 10%;
+            padding-bottom: 10%;
+            width: 80%;
+        }
+
+        .text_taskContent{
+            position: relative;
+            top: 10px;;
+        }
+        .ui-select {
+            left: -0.05in;
+            width: 100%;
+        }
+
+       .ui-block{
+            position: relative;
+            top: -2px;
+            margin: -5px;
+           margin-right: 1px;
+        }
+       #basePoint,#baseDay,#baseHour{
+           text-align:center;
+       }

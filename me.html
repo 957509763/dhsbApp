@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta  charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>我</title>
+    <link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.4.5.min.css"/>
+    <script src="js/jquery-2.2.1.min.js"></script>
+    <script src="js/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
+    <style type="text/css">
+        .ui-logout{
+            width: 90%;
+            padding: 5%;
+        }
+        .ui-photo{
+            padding: 14px;
+        }
+        .ui-information{
+            position: relative;
+            top:-50px;
+        }
+    </style>
+</head>
+
+<body>
+<div data-role="page" id="pageone">
+    <div data-role="content">
+        <ul data-role="listview" data-inset="true">
+            <li>
+                <a href="#">
+                    <img src="images/me/photo.png" class="ui-photo">
+                    <h2>徐龙</h2>
+                    <p>Google Chrome is a free, open-source web browser. Released in 2008.</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div data-role="content" class="ui-information">
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#"><img src="images/LoginImages/login_username.png" class="ui-li-icon">我的资料</a></li>
+            <li><a href="#"><img src="images/LoginImages/login_password.png" class="ui-li-icon">密码设置</a></li>
+            <li><a href="#"><img src="images/me/footprint.png" class="ui-li-icon">足迹设置</a></li>
+            <li><a href="#"><img src="images/me/clear.png" class="ui-li-icon">清除缓存</a></li>
+            <li><a href="#"><img src="images/me/about.png" class="ui-li-icon">关于</a></li>
+        </ul>
+    </div>
+<div class="ui-logout">
+    <a href="#" data-role="button">注 销</a>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>固定工作设置</title>
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+	<link rel=stylesheet href="js/jquerymobile/jquery.mobile-1.4.5.min.css"/>
+	<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="js/swipList.js"></script>
+	<script type="text/javascript" src="js/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
+	<style type="text/css">
+		.tab{ margin-top:-20px; padding:0; }
+		.menu{ list-style:none; margin-left:-10%;}
+		/* tab */
+		.tab{width:100%;}
+		.tab .menu{height:40px;}
+		.tab .menu li{float:left;text-align:center;width:50%;height:40px;background:#f6f6f6;line-height:40px;list-style:none;font-size:20px;}
+		.tab .menu li.active{border-bottom:solid 1px #1798ff;}
+
+		.list_wrapper{
+			width: 100%;
+			height:65px;
+		}
+		.list_context{
+			border-bottom-width:thin;
+			border-bottom-style:solid;
+			border-color:#dddddd;
+			padding-left:10px;
+		}
+
+		.list_icon,.list_message{
+			float:left
+		}
+
+		.list_red_message{
+			float:left;
+			width:25px;
+			height:25px;
+			background: red;
+			border-radius: 25px;
+			border-style: none;
+			margin-left:-25px;
+			color: white;
+			text-align: center;
+			line-height: 25px;
+			font-size: 15px;
+			z-index:100;
+			margin-top:3px;
+		}
+
+		.list_message{
+			margin-left:5px;
+		}
+
+		.list_delete,.list_change{
+			font-size: 20px;
+			float:left;
+			color: white;
+			text-align: center;
+		}
+		.list_delete{
+			background-color: orangered;
+		}
+		.list_change{
+			background-color: #adadad;
+		}
+		.list_icon{
+			text-align: center;
+		}
+		.list_icon img{
+			width:80%;
+			height:80%;
+			margin-top:10%
+		}
+		.swip_title_time{
+			width: 100%;
+		}
+		.swip_title{
+			float: left;
+			font-size: 20px;
+			margin-top:8px;
+		}
+
+		.swip_title{
+			float: left;
+			font-size: 20px;
+			margin-top:8px;
+		}
+		.swip_time{
+			float: right;
+			margin-right: 20px;
+			font-size: 10px;
+		}
+		.swip_message{
+			float: left;
+			width: 100%;
+			margin-left: 15px;
+			margin-top:5px;
+			font-size: 15px;
+		}
+	</style>
+	<script>
+		$(function () {
+			$('.tab ul.menu li').click(function(){
+				//获得当前被点击的元素索引值
+				var Index = $(this).index();
+				//给菜单添加选择样式
+				$(this).addClass('active').siblings().removeClass('active');
+				//显示对应的div
+				$('.tab').children('div').eq(Index).show().siblings('div').hide();
+			});
+		});
+
+		$(function(){
+			$.ajax({
+				async:false,
+				type:"post",
+				url:"getTaskMessageInfo.do",
+				data:"companyId=9&personId=542",
+				success:function (data){
+					alert(data);
+					seeMessageInfo(data)
+				},
+				error:function(){
+					//alert("*******");
+				}
+			});
+		});
+		function seeMessageInfo(data){
+			var dataObj = eval("("+data+")");
+			if(dataObj.unCompletedNum!=0)
+				document.getElementById("unCompletedNum").innerHTML=dataObj.unCompletedNum;
+			else
+				document.getElementById("unCompletedNum").style.display="none";
+			if(dataObj.completedNum!=0)
+				document.getElementById("completedNum").innerHTML=dataObj.completedNum;
+			else
+				document.getElementById("completedNum").style.display="none";
+			if(dataObj.feedbackNum!=0)
+				document.getElementById("feedbackNum").innerHTML=dataObj.feedbackNum;
+			else
+				document.getElementById("feedbackNum").style.display="none";
+			if(dataObj.timeoutNum!=0)
+				document.getElementById("timeoutNum").innerHTML=dataObj.timeoutNum;
+			else
+				document.getElementById("timeoutNum").style.display="none";
+			if(dataObj.notepadNum!=0)
+				document.getElementById("notepadNum").innerHTML=dataObj.notepadNum;
+			else
+				document.getElementById("notepadNum").style.display="none";
+		}
+	</script>
+</head>
+<body>
+<div class="tab">
+	<ul class="menu">
+		<li class="active">我的固定工作</li>
+		<li>下属固定工作</li>
+	</ul>
+</div>
+<div class="list_wrapper">
+	<div class="list_context">
+		<div class="list_icon">
+			<img src="images/messages/icon_unComplete.png"/>
+		</div>
+		<div class="list_message">
+			<div class="list_red_message" id="unCompletedNum">3</div>
+			<div class="swip_title_time">
+				<div class="swip_title">未完成任务</div>
+				<div class="swip_time">2015-12-22 12:33</div>
+			</div>
+			<div class="swip_message">
+				这是信息
+			</div>
+		</div>
+		<div class="list_change">
+			修改
+		</div>
+		<div class="list_delete">
+			删除
+		</div>
+	</div>
+</div>
+<div class="list_wrapper">
+	<div class="list_context">
+		<div class="list_icon">
+			<img src="images/messages/icon_check.png">
+
+		</div>
+		<div class="list_message">
+			<div class="list_red_message" id="completedNum">3</div>
+			<div class="swip_title_time">
+				<div class="swip_title">待审查任务</div>
+				<div class="swip_time">2015-12-22 12:33</div>
+			</div>
+			<div class="swip_message">
+				这是信息
+			</div>
+		</div>
+		<div class="list_change">
+			修改
+		</div>
+		<div class="list_delete">
+			删除
+		</div>
+	</div>
+</div>
+<div class="list_wrapper">
+	<div class="list_context">
+		<div class="list_icon">
+			<img src="images/messages/icon_feedback.png">
+		</div>
+		<div class="list_message">
+			<div class="list_red_message" id="feedbackNum">3</div>
+			<div class="swip_title_time">
+				<div class="swip_title">有反馈工作</div>
+				<div class="swip_time">2015-12-22 12:33</div>
+			</div>
+			<div class="swip_message">
+				这是信息
+			</div>
+		</div>
+		<div class="list_change">
+			修改
+		</div>
+		<div class="list_delete">
+			删除
+		</div>
+
+	</div>
+</div>
+<div class="list_wrapper">
+	<div class="list_context">
+		<div class="list_icon">
+			<img src="images/messages/icon_timeout.png">
+		</div>
+		<div class="list_message">
+			<div class="list_red_message" id="timeoutNum">3</div>
+			<div class="swip_title_time">
+				<div class="swip_title">有超时工作</div>
+				<div class="swip_time">2015-12-22 12:33</div>
+			</div>
+			<div class="swip_message">
+				这是信息
+			</div>
+		</div>
+		<div class="list_change">
+			修改
+		</div>
+		<div class="list_delete">
+			删除
+		</div>
+
+	</div>
+</div>
+<div class="list_wrapper">
+	<div class="list_context">
+		<div class="list_icon">
+			<img src="images/messages/icon_notebook.png">
+		</div>
+		<div class="list_message">
+			<div class="list_red_message" id="notepadNum">3</div>
+			<div class="swip_title_time">
+				<div class="swip_title" >记事本</div>
+				<div class="swip_time">2015-12-22 12:33</div>
+			</div>
+			<div class="swip_message">
+				这是信息
+			</div>
+		</div>
+		<div class="list_change">
+			修改
+		</div>
+		<div class="list_delete">
+			删除
+		</div>
+
+	</div>
+</div>
+</body>
+</html>

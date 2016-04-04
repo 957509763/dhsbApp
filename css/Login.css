@@ -1,0 +1,87 @@
+h1{
+    padding-top: 15%;
+    font-size: 120%;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana,         sans-serif;
+}
+.line {
+    position:relative; top:3px; left:6px;
+    padding-top: 1px;
+    left: 10%;
+    height:1px;
+    width: 80%;
+    background-color: #000000;
+}
+.logo img{
+    position:relative; top:30px;
+    width: 70%;
+}
+.logo{
+    text-align: center;
+}
+.ui-overlay-a,.ui-page-theme-a,.ui-page-theme-a .ui-panel-wrapper {
+
+    background-image:url("images/LoginImages/login_background.jpg");
+
+}
+
+.ui-input input[type="text"]{
+    background: url(images/LoginImages/login_username.png) no-repeat 10px, 20px;
+    padding-left: 40px;
+}
+
+.ui-select-company span{
+    font-size: 15px;
+}
+.ui-input-user{
+    padding-top: 2px;
+}
+.ui-input input[type="password"] {
+    background: url(images/LoginImages/login_password.png) no-repeat 10px, 20px;
+    padding-left: 40px;
+}
+.ui-input-password{
+    padding-top: 1px;
+}
+
+.ui-submit{
+    padding-top: 10px;
+
+}
+.login{
+    padding: 20px;
+}
+
+.ui-checkbox-rememberpassword{
+    float: left;
+}
+.ui-checkbox-auto-login{
+    float: left;
+    padding-left: 20px;
+}
+
+.ui-select {
+    left: -0.05in;
+    width: 99.9%;
+
+}
+
+.ui-checkboxgrounp label{
+
+    font-size: 15px;
+
+
+}
+
+.ui-checkboxgrounp {
+    padding-top: 10px;
+}
+
+.check-lable{
+    float: left;
+}
+form {
+    position: relative;
+    top: 45px;
+    margin: 0 auto;
+    width: 75%;
+}

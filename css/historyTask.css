@@ -1,0 +1,14 @@
+form{
+    width:96%;
+}
+table {
+    padding-left: 3%;
+    padding-top: 5%;
+}
+.text-lable{
+    font-size: 15px;
+}
+.text-task{
+    position: relative;
+    top: 15px;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>缔华丝宝智能管理系统</title>
+    <link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.4.5.css"/>
+    <link rel="stylesheet" href="css/OAManager.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/jquery-ui.css"/>
+    <link rel="stylesheet" href="css/ShakeBorder.css"/>
+    <script type="text/javascript" src="js/jquery-2.2.1.js"></script>
+    <script type="text/javascript" src="js/jquerymobile/jquery.mobile-1.4.5.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/ShakeBorder.js"></script>
+
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content">
+            <div class="layoutTopbar"></div>
+            <div class="container">
+                <div class="row" id="sortable">
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/signBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>签到</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/notepadBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>记事本</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon" onclick="window.location.href= 'http://192.168.1.177:8080/test/myWork.html';return false"><img src="images/OAimages/myworkBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title" ><span>我的工作</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/voiceconferenceBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>语音会议</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/ustomervisitBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>客户拜访</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/newcontactsBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>新建联系人</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/brandscanBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>名牌扫描</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/signBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>通讯录</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/subordinatetrackingBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>下属踪迹</span></div>
+                </div>
+                <div class=" col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/leaveBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>请假</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/signBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>沟通反馈</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/achievementsBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>绩效成果</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/todoBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>代办事项</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/noticeBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>公告栏</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/signBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>监督检查</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/notepadBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>写日志</span></div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1 brick small">
+                    <div><div class="index_icon"><img src="images/OAimages/signBtnIcon.png"/><div class="circle_message">3</div><div class="removeself_message"><img  src="images/removeself.png"/></div></div></div>
+                    <div class="index_icno_title"><span>文件管理</span></div>
+                </div>
+                <!--<div class="brick large"></div>-->
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/OAManage.js"></script>
+</html>
+
+<style type="text/css">
+    body .ui-content{
+        padding: 0;
+        border: 0;
+        margin: 0;
+    }
+    .container{
+        margin-top:10px;
+    }
+</style>
