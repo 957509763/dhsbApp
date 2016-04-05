@@ -5,9 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/js/OAManage.js" description="&#10;$(&quot;.removeself_message&quot;).click(function(){&#10;    va..." line="38" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef204cf6-990e-4499-8f16-d64a1c207203" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="ef204cf6-990e-4499-8f16-d64a1c207203" name="Default" comment="" />
     <ignored path="TestDemo.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,18 +28,8 @@
       <file leaf-file-name="personalCenter.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/personalCenter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-841">
-              <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="select.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/select.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="61" selection-end-column="3" />
+            <state relative-caret-position="1850">
+              <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -50,7 +38,7 @@
       <file leaf-file-name="personalCenter.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/personalCenter.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-524">
+            <state relative-caret-position="-299">
               <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
               <folding />
             </state>
@@ -314,15 +302,15 @@
       <workItem from="1459665438359" duration="7092000" />
       <workItem from="1459732894981" duration="1347000" />
       <workItem from="1459755651131" duration="3618000" />
-      <workItem from="1459815639397" duration="10821000" />
+      <workItem from="1459815639397" duration="11025000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152698000" />
+    <option name="totallyTimeSpent" value="152902000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="485" y="1" width="1504" height="1056" extended-state="1" />
+    <frame x="485" y="1" width="1504" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17271505" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -702,14 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/personalCenter.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-524">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/select.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -718,10 +698,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/personalCenter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/personalCenter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-841">
-          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+        <state relative-caret-position="1850">
+          <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
           <folding />
         </state>
       </provider>
