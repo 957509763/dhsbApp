@@ -1,4 +1,8 @@
 $(function(){
+    initSwip();
+});
+
+function initSwip(){
     var list_messageContentObjs = $(".list_messageContent");
     var startXForMobile,startX;
     var pressedObj;  // 当前左滑的对象
@@ -79,4 +83,4 @@ $(function(){
         });
 
     });
-});
+}
