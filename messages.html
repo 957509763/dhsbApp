@@ -9,23 +9,53 @@
     <script type="text/javascript" src="js/swipList.js"></script>
     <script type="text/javascript" src="js/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
     <style type="text/css">
-        .list_wrapper{
-            width: 100%;
+        .list_wrap:not(:first-child){
+            margin-top: -65px;;
+
+        }
+        .list_content,.list_messageContent{
+            width:100%;
+            height:10%;
+            height: 65px;
+
+        }
+        .menu_Item{
             height:65px;
+            width: 65px;
+            line-height: 65px;
+            color:white;
+            letter-spacing:5px;
+            text-align: center;
+            position: relative;
+            right: 1px;
+            float:right;
         }
-        .list_context{
-            border-bottom-width:thin;
-            border-bottom-style:solid;
-            border-color:#dddddd;
-            padding-left:10px;
+        .list_messageContent{
+            width:100%;
+            background-color:#F0F0F0;
+            position: relative;
+            top:-65px;
+            z-index: 2;
+            border-bottom: solid thin #FCFCFC;
         }
 
-        .list_icon,.list_message{
-            float:left
+        .delete_Item{
+            background-color: red;
         }
-
+        .change_Item{
+            background-color: #00a0df;
+        }
+        /*在此之后就是符合当下页面格式的左边滑样式*/
+        .list_icon{
+            width: 65px;
+            height: 65px;
+           // border: solid thin;
+            text-align: center;
+        }
+        .list_icon img{
+            margin-top:15%;
+        }
         .list_red_message{
-			float:left;
             width:25px;
             height:25px;
             background: red;
@@ -36,60 +66,29 @@
             text-align: center;
             line-height: 25px;
             font-size: 15px;
-            z-index:100;
-            margin-top:3px;
+            position: relative;
+            z-index: 3;
+            left:75px;
+            bottom: 60px;
         }
-
         .list_message{
-            margin-left:5px;
-        }
-
-        .list_delete,.list_change{
-            font-size: 20px;
-            float:left;
-            color: white;
-            text-align: center;
-        }
-        .list_delete{
-            background-color: orangered;
-        }
-        .list_change{
-            background-color: #adadad;
-        }
-        .list_icon{
-            text-align: center;
-        }
-        .list_icon img{
-        	width:80%;
-        	height:80%;
-            margin-top:10%
+            position: relative;
+            z-index: 3;
+            width: 100%;
         }
         .swip_title_time{
-            width: 100%;
+            position: relative;
+            bottom: 60px;
+            left:80px;
+
         }
         .swip_title{
-            float: left;
+           position: relative;
+            left: 10px;
+            top:15px;
             font-size: 20px;
-            margin-top:8px;
         }
 
-         .swip_title{
-            float: left;
-            font-size: 20px;
-            margin-top:8px;
-        }
-        .swip_time{
-            float: right;
-            margin-right: 20px;
-            font-size: 10px;
-        }
-        .swip_message{
-            float: left;
-            width: 100%;
-            margin-left: 15px;
-            margin-top:5px;
-            font-size: 15px;
-        }
     </style>
      <script>
        $(function(){
@@ -103,7 +102,7 @@
             	   seeMessageInfo(data)
                },
                error:function(){
-                   alert("*******");
+                   //alert("*******");
                }
            });
        });
@@ -133,94 +132,92 @@
     </script>
 </head>
 <body>
-    <div class="list_wrapper">
-        <div class="list_context">
-            <div class="list_icon">
-            	 <img src="images/messages/icon_unComplete.png"/>
-            </div>
-            <div class="list_message">
-                <div class="list_red_message" id="unCompletedNum">3</div>
-               	<div class="swip_title_time">
+<div class="list_wrap">
+    <!--在这个div中如果有选项就添加在list_content中，如果没有就为空但是还是保留这个div -->
+    <div class="list_content">
+        <div class="menu_Item delete_Item">删除</div>
+        <div class="menu_Item change_Item">已读</div>
+    </div>
+    <div class="list_messageContent">
+        <div class="list_icon">
+            <img src="images/messages/icon_unComplete.png"/>
+            <div class="list_red_message" id="unCompletedNum">3</div>
+        </div>
+        <div class="list_message">
+            <div class="swip_title_time">
                 <div class="swip_title">未完成任务</div>
-                <div class="swip_time">2015-12-22 12:33</div>
-            	</div>
-            	<div class="swip_message">
-               		 这是信息
-            	</div>
             </div>
         </div>
     </div>
-    <div class="list_wrapper">
-        <div class="list_context">
-            <div class="list_icon">
-            	<img src="images/messages/icon_check.png">
+</div>
+<div class="list_wrap">
+    <div class="list_content">
+        <div class="menu_Item delete_Item">删除</div>
+        <div class="menu_Item change_Item">已读</div>
+    </div>
+    <div class="list_messageContent">
+        <div class="list_icon">
+            <img src="images/messages/icon_check.png">
+            <div class="list_red_message" id="completedNum">3</div>
+        </div>
+        <div class="list_message">
+            <div class="swip_title_time">
+                <div class="swip_title">待审查任务</div>
+            </div>
+        </div>
+    </div>
+</div >
+<div class="list_wrap">
+    <div class="list_content">
+        <div class="menu_Item delete_Item">删除</div>
+        <div class="menu_Item change_Item">已读</div>
+    </div>
+    <div class="list_messageContent">
+        <div class="list_icon">
+            <img src="images/messages/icon_feedback.png">
+            <div class="list_red_message" id="feedbackNum">3</div>
+        </div>
+        <div class="list_message">
+            <div class="swip_title_time">
+                <div class="swip_title">反馈任务</div>
+            </div>
+        </div>
+    </div>
+</div >
+<div class="list_wrap">
+    <div class="list_content">
+        <div class="menu_Item delete_Item">删除</div>
+        <div class="menu_Item change_Item">已读</div>
+    </div>
+    <div class="list_messageContent">
+        <div class="list_icon">
+            <img src="images/messages/icon_timeout.png">
+            <div class="list_red_message" id="timeoutNum">3</div>
+        </div>
+        <div class="list_message">
+            <div class="swip_title_time">
+                <div class="swip_title">超时任务</div>
+            </div>
+        </div>
+    </div>
+</div >
+<div class="list_wrap">
+    <div class="list_content">
+        <div class="menu_Item delete_Item">删除</div>
+        <div class="menu_Item change_Item">已读</div>
+    </div>
+    <div class="list_messageContent">
+        <div class="list_icon">
+            <img src="images/messages/icon_notebook.png">
+            <div class="list_red_message" id="notepadNum">3</div>
+        </div>
+        <div class="list_message">
+            <div class="swip_title_time">
+                <div class="swip_title">记事本</div>
+            </div>
+        </div>
+    </div>
+</div >
 
-            </div>
-            <div class="list_message">
-                <div class="list_red_message" id="completedNum">3</div>
-                <div class="swip_title_time">
-               	 	<div class="swip_title">待审查任务</div>
-                	<div class="swip_time">2015-12-22 12:33</div>
-            	</div>
-            	<div class="swip_message">
-               		 这是信息
-            	</div>
-            </div>
-        </div>
-    </div>
-    <div class="list_wrapper">
-        <div class="list_context">
-            <div class="list_icon">
-             	<img src="images/messages/icon_feedback.png">
-            </div>
-            <div class="list_message">
-                <div class="list_red_message" id="feedbackNum">3</div>
-                 <div class="swip_title_time">
-                	<div class="swip_title">有反馈工作</div>
-                	<div class="swip_time">2015-12-22 12:33</div>
-            	</div>
-            	<div class="swip_message">
-               		 这是信息
-            	</div>
-            </div>
-            
-        </div>
-    </div>
-    <div class="list_wrapper">
-        <div class="list_context">
-            <div class="list_icon">
-            	<img src="images/messages/icon_timeout.png">
-            </div>
-            <div class="list_message">
-                <div class="list_red_message" id="timeoutNum">3</div>
-                <div class="swip_title_time">
-                	<div class="swip_title">有超时工作</div>
-                	<div class="swip_time">2015-12-22 12:33</div>
-            </div>
-            <div class="swip_message">
-                这是信息
-            </div>
-            </div>
-            
-        </div>
-    </div>
-    <div class="list_wrapper">
-        <div class="list_context">
-            <div class="list_icon">
-            	 <img src="images/messages/icon_notebook.png">
-            </div>
-            <div class="list_message">
-                <div class="list_red_message" id="notepadNum">3</div>
-                <div class="swip_title_time">
-                	<div class="swip_title" >记事本</div>
-                	<div class="swip_time">2015-12-22 12:33</div>
-            	</div>
-            	<div class="swip_message">
-               		 这是信息
-            	</div>
-            </div>
-            
-        </div>
-    </div>
 </body>
 </html>
