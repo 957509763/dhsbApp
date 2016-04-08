@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>选项卡</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <style>
+        body {
+            background: #fff;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#000;
+            margin: 0;
+            padding: 0;
+        }
+        ul{list-style:none}
+        .nav {
+            width: 100%;
+            height: 40px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px rgba(149, 149, 149, .7);
+            background: -webkit-gradient(linear, 0 0, 0 bottom, from(#e7e7e7), to(#e6e7e6));
+            background: -moz-linear-gradient(#e7e7e7, #e6e7e6);
+            background: -ms-linear-gradient(top left, #e7e7e7, #e6e7e6);
+            background: -o-linear-gradient(top left, #e7e7e7, #e6e7e6);
+            background: linear-gradient(top left, #e7e7e7, #e6e7e6);
+            overflow: hidden;
+        }
+
+        .swiper-container {
+            width: 100%;
+        }
+        .swiper-slide {
+            list-style: none;
+            font-size: 18px;
+            width: auto;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .swiper-slide li{
+            float: left;
+            color: #6c6c6c;
+            padding: 8px;
+            border-style: solid;
+            border-width: thin;
+            margin-bottom: 1px;
+            border-color: #e7e7e7;
+            background-color:#e7e7e7;
+        }
+        .swiper-slide li.active{
+            background-color: #ffffff;
+            border-bottom:solid 1px #1798ff;
+        }
+
+        .swiper-slide li a{
+            color: #6c6c6c;
+            text-decoration : none
+        }
+
+    </style>
+</head>
+<body>
+<!-- Swiper -->
+<div class="nav swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <ui>
+                <li class="active">
+                    <a href="#">近期任务</a>
+                </li>
+                <li>
+                    <a href="#">每日工作</a>
+                </li>
+                <li>
+                    <a href="#">每周工作</a>
+                </li>
+                <li>
+                    <a href="#">每月工作</a>
+                </li>
+                <li>
+                    <a href="#">每年工作</a>
+                </li>
+                <li>
+                    <a href="#">近期任务</a>
+                </li>
+                <li>
+                    <a href="#">每日工作</a>
+                </li>
+                <li>
+                    <a href="#">每周工作</a>
+                </li>
+                <li>
+                    <a href="#">每月工作</a>
+                </li>
+                <li>
+                    <a href="#">每年工作</a>
+                </li>
+            </ui>
+        </div>
+    </div>
+    <!-- Add Scroll Bar -->
+</div>
+<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+</body>
+<!-- Swiper JS -->
+<script src="js/swiper.min.js"></script>
+
+<script>
+    $(function () {
+        $('.swiper-slide li').click(function(){
+            //获得当前被点击的元素索引值
+            var Index = $(this).index();
+            //给菜单添加选择样式
+            $(this).addClass('active').siblings().removeClass('active');
+            //显示对应的div
+            $('.tab').children('div').eq(Index).show().siblings('div').hide();
+        });
+    });
+</script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper =  new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        slidesPerView: 'auto',
+        mousewheelControl: true,
+        freeMode: true,
+        observer:true,
+        observeParents:true,
+    });
+</script>
+</body>
+</html>
