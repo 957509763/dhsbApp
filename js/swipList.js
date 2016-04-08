@@ -81,6 +81,5 @@ function initSwip(){
         $(obj).slideUp("500",function(){
             $(obj).remove();
         });
-
     });
 }
