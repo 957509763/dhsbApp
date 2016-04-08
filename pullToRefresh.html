@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拉动刷新</title>
+    <meta name="viewport"content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+<!--    <link rel=stylesheet href="js/jquerymobile/jquery.mobile-1.4.5.min.css"/>-->
+    <link rel="stylesheet" href="css/pullToRefresh.css"/>
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/iscroll.js"></script>
+    <script src="js/pullToRefresh.js"></script>
+    <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="js/swipList.js"></script>
+<!--    <script type="text/javascript" src="js/jquerymobile/jquery.mobile-1.4.5.min.js"></script>-->
+    <style type="text/css">
+        ul {
+            list-style: none;
+        }
+
+        .list_wrap:not(:first-child) {
+            margin-top: -65px;;
+
+        }
+
+        .list_content, .list_messageContent {
+            width: 100%;
+            height: 10%;
+            height: 65px;
+
+        }
+
+        .menu_Item {
+            height: 65px;
+            width: 65px;
+            line-height: 65px;
+            color: white;
+            letter-spacing: 5px;
+            text-align: center;
+            position: relative;
+            right: 1px;
+            float: right;
+        }
+
+        .list_messageContent {
+            width: 100%;
+            background-color: #F0F0F0;
+            position: relative;
+            top: -65px;
+            z-index: 2;
+            border-bottom: solid thin #FCFCFC;
+        }
+
+        .delete_Item {
+            background-color: red;
+        }
+
+        .change_Item {
+            background-color: #00a0df;
+        }
+
+        /*在此之后就是符合当下页面格式的左边滑样式*/
+        .list_icon {
+            width: 65px;
+            height: 65px;
+        / / border: solid thin;
+            text-align: center;
+        }
+
+        .list_icon img {
+            margin-top: 15%;
+        }
+
+        .list_red_message {
+            width: 25px;
+            height: 25px;
+            background: red;
+            border-radius: 25px;
+            border-style: none;
+            margin-left: -25px;
+            color: white;
+            text-align: center;
+            line-height: 25px;
+            font-size: 15px;
+            position: relative;
+            z-index: 3;
+            left: 75px;
+            bottom: 60px;
+        }
+
+        .list_message {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+        }
+
+        .swip_title_time {
+            position: relative;
+            bottom: 60px;
+            left: 80px;
+
+        }
+
+        .swip_title {
+            position: relative;
+            left: 10px;
+            top: 15px;
+            font-size: 20px;
+        }
+
+        #wrapper li{
+            height:66px;
+        }
+
+    </style>
+    <script>
+        $(function () {
+            $.ajax({
+                async: false,
+                type: "post",
+                url: "getTaskMessageInfo.do",
+                data: "companyId=9&personId=542",
+                success: function (data) {
+                    alert(data);
+                    seeMessageInfo(data)
+                },
+                error: function () {
+                    //alert("*******");
+                }
+            });
+        });
+        function seeMessageInfo(data) {
+            var dataObj = eval("(" + data + ")");
+            if (dataObj.unCompletedNum != 0)
+                document.getElementById("unCompletedNum").innerHTML = dataObj.unCompletedNum;
+            else
+                document.getElementById("unCompletedNum").style.display = "none";
+            if (dataObj.completedNum != 0)
+                document.getElementById("completedNum").innerHTML = dataObj.completedNum;
+            else
+                document.getElementById("completedNum").style.display = "none";
+            if (dataObj.feedbackNum != 0)
+                document.getElementById("feedbackNum").innerHTML = dataObj.feedbackNum;
+            else
+                document.getElementById("feedbackNum").style.display = "none";
+            if (dataObj.timeoutNum != 0)
+                document.getElementById("timeoutNum").innerHTML = dataObj.timeoutNum;
+            else
+                document.getElementById("timeoutNum").style.display = "none";
+            if (dataObj.notepadNum != 0)
+                document.getElementById("notepadNum").innerHTML = dataObj.notepadNum;
+            else
+                document.getElementById("notepadNum").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <ul>
+        <li>
+            <div class="list_wrap">
+                <!--在这个div中如果有选项就添加在list_content中，如果没有就为空但是还是保留这个div -->
+                <div class="list_content">
+                    <div class="menu_Item delete_Item">删除</div>
+                    <div class="menu_Item change_Item">已读</div>
+                </div>
+                <div class="list_messageContent">
+                    <div class="list_icon">
+                        <img src="images/messages/icon_unComplete.png"/>
+                        <div class="list_red_message" id="unCompletedNum">3</div>
+                    </div>
+                    <div class="list_message">
+                        <div class="swip_title_time">
+                            <div class="swip_title">未完成任务</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="list_wrap">
+                <div class="list_content">
+                    <div class="menu_Item delete_Item">删除</div>
+                    <div class="menu_Item change_Item">已读</div>
+                </div>
+                <div class="list_messageContent">
+                    <div class="list_icon">
+                        <img src="images/messages/icon_check.png">
+                        <div class="list_red_message" id="completedNum">3</div>
+                    </div>
+                    <div class="list_message">
+                        <div class="swip_title_time">
+                            <div class="swip_title">待审查任务</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="list_wrap">
+                <div class="list_content">
+                    <div class="menu_Item delete_Item">删除</div>
+                    <div class="menu_Item change_Item">已读</div>
+                </div>
+                <div class="list_messageContent">
+                    <div class="list_icon">
+                        <img src="images/messages/icon_feedback.png">
+                        <div class="list_red_message" id="feedbackNum">3</div>
+                    </div>
+                    <div class="list_message">
+                        <div class="swip_title_time">
+                            <div class="swip_title">反馈任务</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="list_wrap">
+                <div class="list_content">
+                    <div class="menu_Item delete_Item">删除</div>
+                    <div class="menu_Item change_Item">已读</div>
+                </div>
+                <div class="list_messageContent">
+                    <div class="list_icon">
+                        <img src="images/messages/icon_timeout.png">
+                        <div class="list_red_message" id="timeoutNum">3</div>
+                    </div>
+                    <div class="list_message">
+                        <div class="swip_title_time">
+                            <div class="swip_title">超时任务</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="list_wrap">
+                <div class="list_content">
+                    <div class="menu_Item delete_Item">删除</div>
+                    <div class="menu_Item change_Item">已读</div>
+                </div>
+                <div class="list_messageContent">
+                    <div class="list_icon">
+                        <img src="images/messages/icon_notebook.png">
+                        <div class="list_red_message" id="notepadNum">3</div>
+                    </div>
+                    <div class="list_message">
+                        <div class="swip_title_time">
+                            <div class="swip_title">记事本</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<script>
+    refresher.init({
+        id: "wrapper",//<------------------------------------------------------------------------------------┐
+        pullDownAction: Refresh,
+        pullUpAction: Load
+    });
+    function Refresh() {
+        setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+            var el, li, i;
+            el = document.querySelector("#wrapper ul");
+            //这里写你的刷新代码
+            document.getElementById("wrapper").querySelector(".pullDownIcon").style.display = "none";
+            document.getElementById("wrapper").querySelector(".pullDownLabel").innerHTML = "<img src='images/ok.png'width='10px' style='padding-top: 5px'/>刷新成功";
+            setTimeout(function () {
+                var el, li, i;
+                el = document.querySelector("#wrapper ul");
+                for (i = 0; i < 2; i++) {
+                    li = document.createElement('li');
+                    li.innerHTML = " <div class='list_wrap'> <div class='list_content'> <div class='menu_Item delete_Item'>删除</div> <div class='menu_Item change_Item'>已读</div> </div> <div class='list_messageContent'> <div class='list_icon'> <img src='images/messages/icon_notebook.png'> <div class='list_red_message' id'notepadNum'>3</div> </div> <div class='list_message'> <div class='swip_title_time'> <div class='swip_title'>记事本</div> </div> </div> </div> </div>"
+                    el.insertBefore(li, el.childNodes[0]);
+                }
+                wrapper.refresh();
+                initSwip();
+                //document.getElementById("wrapper").querySelector(".pullDownLabel").innerHTML = "";
+            }, 1000);//模拟qq下拉刷新显示成功效果
+            /****remember to refresh after  action completed！ ---yourId.refresh(); ----| ****/
+        }, 1000);
+    }
+    function Load() {
+        setTimeout(function () {// <-- Simulate network congestion, remove setTimeout from production!
+            var el, li, i;
+            el = document.querySelector("#wrapper ul");
+            for (i = 0; i < 2; i++) {
+                li = document.createElement('li');
+                var innerStr="<div class='list_wrap'>";
+                innerStr+=" <div class='list_content'>";
+                innerStr+="<div class='menu_Item delete_Item'>删除</div>";
+                innerStr+="<div class='menu_Item change_Item'>已读</div>";
+                innerStr+="</div>";
+                innerStr+="<div class='list_messageContent'>";
+                innerStr+="<div class='list_icon'>";
+                innerStr+="<img src='images/messages/icon_notebook.png'>";
+                innerStr+="<div class='list_red_message' id='notepadNum'>3</div>";
+                innerStr+="</div>";
+                innerStr+="<div class='list_message'>";
+                innerStr+="<div class='swip_title_time'>";
+                innerStr+="<div class='swip_title'>记事本</div>";
+                innerStr+="</div>";
+                innerStr+="</div>";
+                innerStr+="</div>";
+            		innerStr+="</div>";
+                li.innerHTML = innerStr;
+                el.appendChild(li, el.childNodes[0]);
+            }
+            wrapper.refresh();
+            initSwip();
+            /****remember to refresh after action completed！！！   ---id.refresh(); --- ****/
+        }, 1000);
+    }
+</script>
+</body>
+</html>

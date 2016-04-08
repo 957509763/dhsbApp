@@ -1,4 +1,8 @@
 $(function(){
+    initSwip();
+});
+
+function initSwip(){
     var list_messageContentObjs = $(".list_messageContent");
     var startXForMobile,startX;
     var pressedObj;  // 当前左滑的对象
@@ -73,10 +77,9 @@ $(function(){
         });
     }
     $(".delete_Item").click(function(){
-        var obj = $(this).parent().parent();
+        var obj = $(this).parent().parent().parent();
         $(obj).slideUp("500",function(){
             $(obj).remove();
         });
-
     });
-});
+}
